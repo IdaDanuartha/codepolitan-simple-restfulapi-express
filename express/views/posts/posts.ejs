@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h3>Posts</h3>
+  <a href="/posts/create">Add Post</a>
+  <% posts.forEach(post => { %>
+    <ul>
+      <li><%= post.title %></li>
+      <li><%= post.category %></li>
+      <li><%= post.author %></li>
+      <li style="display: flex;">
+        <a href="/posts/<%= post.id %>">Detail</a>
+        <a style="margin: 0 10px;" href="/posts/<%= post.id %>/edit">Edit</a>
+        <form action="/posts/<%= post.id %>?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    </ul>
+  <% }) %>
+</body>
+</html>

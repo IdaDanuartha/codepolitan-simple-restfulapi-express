@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <form action="/posts/<%= post.id %>?_method=PATCH" method="post">
+    <input type="text" name="title" value="<%= post.title %>" placeholder="Input title post">
+    <input type="text" name="category" value="<%= post.category %>" placeholder="Input category post">
+    <button type="submit">Save Changes</button>
+  </form>
+  <a href="/posts">Back</a>
+</body>
+</html>
