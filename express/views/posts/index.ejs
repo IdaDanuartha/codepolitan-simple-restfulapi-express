@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h3>Posts</h3>
+  <a href="/posts/create">Add Post</a>
+  <% posts.forEach(post => { %>
+    <ul>
+      <li><%= post.title %></li>
+      <li><%= post.category %></li>
+      <li><%= post.author %></li>
+    </ul>
+  <% }) %>
+</body>
+</html>
